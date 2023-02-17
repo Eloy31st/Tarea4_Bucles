@@ -59,7 +59,7 @@ Ejemplo de ejecución del algoritmo:
 -1
 
 La nota media es 13,5
-     */
+
     public static void main(String[] args) {
         double nota, suma, media;
         int n;
@@ -76,5 +76,58 @@ La nota media es 13,5
         }
         media = suma / n;
         System.out.println("La nota media es " + media);
+    }
+     */
+    /*
+    Modificar el algoritmo anterior para mostrar además el porcentaje de notas superiores a 10/20.
+
+Ejemplo de ejecución del algoritmo:
+
+¿Nota (-1 para terminar)?
+
+14
+
+¿Nota (-1 para terminar)?
+
+12
+
+¿Nota (-1 para terminar)?
+
+9
+
+¿Nota (-1 para terminar)?
+
+7
+
+¿Nota (-1 para terminar)?
+
+10
+
+¿Nota (-1 para terminar)?
+
+-1
+
+Media = 10,4 (60 % ≥10)
+     */
+    public static void main(String[] args) {
+        double nota, suma, media;
+        int n, n10;
+        Scanner teclado = new Scanner(System.in);
+        suma = 0;
+        n = 0;
+        n10 = 0;
+        System.out.println("¿Nota (-1 para terminar)?");
+        nota = teclado.nextDouble();
+        while (nota != -1) {
+            suma = suma + nota;
+            n = n + 1;
+            if (nota >= 10) {
+                n10 = n10 + 1;
+            }
+            System.out.println("¿Nota (-1 para terminar)?");
+            nota = teclado.nextDouble();
+        }
+        media = suma / n;
+        System.out.println("Media = " + media + " (" + n10 * 100 / n + " % ≥10)");
     }
 }
